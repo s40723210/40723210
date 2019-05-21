@@ -83,7 +83,7 @@ $(document).ready(doSearch);
 
 </ul>
 </confmenu></header>
-<div class='container'><nav><ul id='css3menu1' class='topmenu'><div class="tipue_search_group"><input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required></div><li><a href='簡介.html'>簡介</a><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜程式環境.html'>配置可攜程式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='靜態 CMSimfly.html'>靜態 CMSimfly</a><li><a href='Mobile 網站內容.html'>Mobile 網站內容</a><li><a href='Virtual Host.html'>Virtual Host</a><li><a href='Javascript.html'>Javascript</a><ul><li><a href='test1.html'>test1</a><li><a href='test2.html'>test2</a><li><a href='test3.html'>test3</a><li><a href='test4.html'>test4</a><li><a href='test5.html'>test5</a></li></ul><li><a href='期中報告.html'>期中報告</a><li><a href='期末報告.html'>期末報告</a></li></ul></nav><section><div id="tipue_search_content">test3 << <a href='test3.html'>Previous</a> <a href='test5.html'>Next</a> >> test5<br /><h1>test4</h1>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><div class="tipue_search_group"><input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required></div><li><a href='簡介.html'>簡介</a><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜程式環境.html'>配置可攜程式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='靜態 CMSimfly.html'>靜態 CMSimfly</a><li><a href='Mobile 網站內容.html'>Mobile 網站內容</a><li><a href='Virtual Host.html'>Virtual Host</a><li><a href='Javascript.html'>Javascript</a><ul><li><a href='test1.html'>test1</a><li><a href='test2.html'>test2</a><li><a href='test3.html'>test3</a><li><a href='test4.html'>test4</a><li><a href='test5.html'>test5</a></li></ul><li><a href='期中報告.html'>期中報告</a><li><a href='期末報告.html'>期末報告</a></li></ul></nav><section><div id="tipue_search_content">test4 << <a href='test4.html'>Previous</a> <a href='期中報告.html'>Next</a> >> 期中報告<br /><h1>test5</h1>
 <!-- for Brython -->
 <script src="./../static/brython.js"></script>
 <script src="./../static/brython_stdlib.js"></script>
@@ -114,11 +114,19 @@ flag_h = canvas.height
 circle_x = flag_w/2
 circle_y = flag_h/2
 # 先畫滿地紅
-ctx.fillStyle='rgb(255, 0, 0)'
-ctx.fillRect(0,0,flag_w,flag_h)
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/3, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為紅色
+ctx.fillStyle = '#ff0000'
+ctx.fill()
 # 再畫青天
-ctx.fillStyle='rgb(0, 0, 150)'
-ctx.fillRect(flag_w/4,flag_h/4,300,200)
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/5, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為藍色
+ctx.fillStyle = '#0000dd'
+ctx.fill()
 # 畫十二道光芒白日
 ctx.beginPath()
 star_radius = flag_w/8
@@ -182,11 +190,19 @@ flag_h = canvas.height
 circle_x = flag_w/2
 circle_y = flag_h/2
 # 先畫滿地紅
-ctx.fillStyle='rgb(255, 0, 0)'
-ctx.fillRect(0,0,flag_w,flag_h)
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/3, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為紅色
+ctx.fillStyle = '#ff0000'
+ctx.fill()
 # 再畫青天
-ctx.fillStyle='rgb(0, 0, 150)'
-ctx.fillRect(flag_w/4,flag_h/4,300,200)
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/5, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為藍色
+ctx.fillStyle = '#0000dd'
+ctx.fill()
 # 畫十二道光芒白日
 ctx.beginPath()
 star_radius = flag_w/8
@@ -242,4 +258,4 @@ window.onload=function(){
 brython(1);
 }
 </script>
-</p><br />test3 << <a href='test3.html'>Previous</a> <a href='test5.html'>Next</a> >> test5</div></section></div></body></html>
+</p><br />test4 << <a href='test4.html'>Previous</a> <a href='期中報告.html'>Next</a> >> 期中報告</div></section></div></body></html>
