@@ -1604,14 +1604,17 @@ brython(1);
 }
 </script>
 </p>
-<!-- 以下利用 Brython 程式執行繪圖 -->
-<p><canvas height="320" id="gameBtn" width="480"></canvas></p>
+<div id="div1">    
+<div id="gameName">飛機大戰小蜜蜂</div>
+    
+<div id="gameBtn">開始遊戲</div>
+</div>
 <script>
 window.onload=function(){
     var oBtn=document.getElementById("gameBtn");
     oBtn.onclick=function(){
         this.style.display='none';
-        document.getElementById('gameAuthor').style.display='none';
+
         document.getElementById('gameName').style.display='none';
         Game.init('div1');//游戏开始
     };
@@ -1674,7 +1677,7 @@ var Game={
     createScore:function(){//积分的创建
         var oS=document.createElement('div');
         oS.id='score';
-        oS.innerHTML='积分：<span>0</span>';
+        oS.innerHTML='積分：<span>0</span>';
         this.oParent.appendChild(oS);
         
         this.oSNum=oS.getElementsByTagName('span')[0];
@@ -1687,7 +1690,7 @@ var Game={
             this.oParent.removeChild(this.oUl);
         }
         
-        document.title='第'+(iNow+1)+'关';
+        document.title='第'+(iNow+1)+'關';
     
         var gk=this.gk[iNow];//得到关卡
         var arr=[];//用来存储ul li蜜蜂的top、left值
@@ -1767,7 +1770,7 @@ var Game={
             nowLi.style.top=nowLi.offsetTop+iSY+'px';
             
             if(This.pz(This.oA,nowLi)){
-                alert('游戏结束');
+                alert('遊戲結束');
                 window.location.reload();
             }
         },30);
@@ -1901,12 +1904,7 @@ var Game={
         }
     }
 };
-</script>
-<div id="div1">    
-<div id="gameName">飞机大战小蜜蜂</div>
-    
-<div id="gameBtn">开始游戏</div>
-</div><h1>期中報告</h1>
+</script><h1>期中報告</h1>
 <p>PPT檔案:<a href="/downloads/40723210期中報告.pdf">40723210期中報告.pdf</a></p>
 <p>影片:<a href="https://youtu.be/avqyumgR6a8">https://youtu.be/avqyumgR6a8</a></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/avqyumgR6a8" width="560"></iframe></p><h1>期末報告</h1>
