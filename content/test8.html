@@ -58,6 +58,12 @@ init_mathjax();
 img.with_border {
     border: 3px solid red;
 }
+*{ margin:0; padding:0;}
+li{ list-style:none;}
+#div1{ width:800px; height:600px; overflow:hidden; background:black; margin:20px auto; position:relative;}
+#gameName{color:white;font-size:40px;font-family:'华文隶书';position:absolute;top:40px;left:255px;}
+#gameBtn{ color:white; font-size:20px; cursor:pointer; border:1px #FFFFFF solid; width:100px; height:30px; line-height:30px; text-align:center; position:absolute; top:285px; left:350px;}
+
 #score{ color:#FFFFFF;}
 #bee{ position:relative;}
 .enemy1{ width:40px; height:28px; background:url("https://img-blog.csdn.net/20150914163129737") no-repeat; float:left;}
@@ -103,12 +109,10 @@ brython(1);
 }
 </script>
 </p>
-<!-- 以下利用 Brython 程式執行繪圖 -->
-<p><canvas height="320" id="div1" width="480"></canvas></p>
 <div id="div1">    
-<div id="gameName">飞机大战小蜜蜂</div>
+<div id="gameName">飛機大戰小蜜蜂</div>
     
-<div id="gameBtn">开始游戏</div>
+<div id="gameBtn">開始遊戲</div>
 </div>
 <script>
 window.onload=function(){
@@ -178,7 +182,7 @@ var Game={
     createScore:function(){//积分的创建
         var oS=document.createElement('div');
         oS.id='score';
-        oS.innerHTML='积分：<span>0</span>';
+        oS.innerHTML='積分：<span>0</span>';
         this.oParent.appendChild(oS);
         
         this.oSNum=oS.getElementsByTagName('span')[0];
@@ -191,7 +195,7 @@ var Game={
             this.oParent.removeChild(this.oUl);
         }
         
-        document.title='第'+(iNow+1)+'关';
+        document.title='第'+(iNow+1)+'關';
     
         var gk=this.gk[iNow];//得到关卡
         var arr=[];//用来存储ul li蜜蜂的top、left值
@@ -271,7 +275,7 @@ var Game={
             nowLi.style.top=nowLi.offsetTop+iSY+'px';
             
             if(This.pz(This.oA,nowLi)){
-                alert('游戏结束');
+                alert('遊戲結束');
                 window.location.reload();
             }
         },30);
