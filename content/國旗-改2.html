@@ -136,7 +136,7 @@ init_mathjax();
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='簡介.html'>簡介</a><ul class='dropdown'><li><a href='vi 與 vim 的指令整理.html'>vi 與 vim 的指令整理</a><li><a href='git基本指令.html'>git基本指令</a><li><a href='python基本語法.html'>python基本語法</a></li></ul><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜程式環境.html'>配置可攜程式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='靜態 CMSimfly.html'>靜態 CMSimfly</a><li><a href='Mobile 網站內容.html'>Mobile 網站內容</a><li><a href='Virtual Host.html'>Virtual Host</a><li class='has-children'><a href='Javascript.html'>Javascript</a><ul class='dropdown'><li><a href='First game.html'>First game</a><li><a href='canvas.html'>canvas</a><li><a href='Spur Gear1.html'>Spur Gear1</a><li><a href='test4.html'>test4</a><li><a href='test5.html'>test5</a><li><a href='test6.html'>test6</a><li><a href='test7.html'>test7</a><li><a href='test8.html'>test8</a></li></ul><li><a href='期中報告.html'>期中報告</a><li><a href='期末報告.html'>期末報告</a></li>
+                     <li class='has-children'><a href='簡介.html'>簡介</a><ul class='dropdown'><li><a href='vi 與 vim 的指令整理.html'>vi 與 vim 的指令整理</a><li><a href='git基本指令.html'>git基本指令</a><li><a href='python基本語法.html'>python基本語法</a></li></ul><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜程式環境.html'>配置可攜程式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='靜態 CMSimfly.html'>靜態 CMSimfly</a><li><a href='Mobile 網站內容.html'>Mobile 網站內容</a><li><a href='Virtual Host.html'>Virtual Host</a><li class='has-children'><a href='Javascript.html'>Javascript</a><ul class='dropdown'><li><a href='First game.html'>First game</a><li><a href='canvas.html'>canvas</a><li><a href='Spur Gear1.html'>Spur Gear1</a><li><a href='Spur Gears.html'>Spur Gears</a><li><a href='國旗-改.html'>國旗-改</a><li><a href='國旗-改2.html'>國旗-改2</a><li><a href='貪食蛇.html'>貪食蛇</a><li><a href='打磚塊.html'>打磚塊</a><li><a href='程式嵌入.html'>程式嵌入</a></li></ul><li><a href='期中報告.html'>期中報告</a><li><a href='期末報告.html'>期末報告</a></li>
                       </ul>
                 </nav>
               </div>
@@ -147,224 +147,182 @@ init_mathjax();
           </div>
           
         </header>
-    <div id="tipue_search_content">test5 << <a href='test5.html'>Previous</a> <a href='test7.html'>Next</a> >> test7<br /><h1>test6</h1>
+    <div id="tipue_search_content">國旗-改 << <a href='國旗-改.html'>Previous</a> <a href='貪食蛇.html'>Next</a> >> 貪食蛇<br /><h1>國旗-改2</h1>
 <!-- for Brython -->
 <script src="./../static/brython.js"></script>
 <script src="./../static/brython_stdlib.js"></script>
 <!-- 啟動 brython() -->
 <p>
-<script>// <![CDATA[
+<script>
 window.onload=function(){
 brython(1);
 }
-// ]]></script>
+</script>
 </p>
-<div id="score">0</div>
 <!-- 以下利用 Brython 程式執行繪圖 -->
-<p><canvas height="320" id="gameCanvas" width="480"></canvas></p>
-<script type="text/javascript">// <![CDATA[
-const GAME_SPEED = 100;
-    const CANVAS_BORDER_COLOUR = 'black';
-    const CANVAS_BACKGROUND_COLOUR = "white";
-    const SNAKE_COLOUR = 'lightblue';
-    const SNAKE_BORDER_COLOUR = 'darkblue';
-    const FOOD_COLOUR = 'yellow';
-    const FOOD_BORDER_COLOUR = 'darkyellow';
-    let snake = [
-      {x: 150, y: 150},
-      {x: 140, y: 150},
-      {x: 130, y: 150},
-      {x: 120, y: 150},
-      {x: 110, y: 150}
-    ]
-    // 玩家的分数
-    let score = 0;
-    // changingDirection 为 true 时表示蛇正在改变方向
-    let changingDirection = false;
-    // 食物的 x 坐标
-    let foodX;
-    // 食物的 y 坐标
-    let foodY;
-    // 横向移动速度
-    let dx = 10;
-    // 纵向移动速度
-    let dy = 0;
-    // 获取 canvas 元素
-    const gameCanvas = document.getElementById("gameCanvas");
-    // 返回一个二维绘制上下文
-    const ctx = gameCanvas.getContext("2d");
-    // 开始游戏
-    main();
-    // 生成第一个食物位置
-    createFood();
-    // 按下任意一个键，都会调用 changeDirection
-    document.addEventListener("keydown", changeDirection);
-    /**
-     * 游戏的主函数
-     * 递归调用以推进游戏  
-     */
-    function main() {
-      // 判定游戏结束时提前返回从而终止游戏
-      if (didGameEnd()) return;
-      setTimeout(function onTick() {
-        changingDirection = false;
-        clearCanvas();
-        drawFood();
-        advanceSnake();
-        drawSnake();
-        // 再次调用 main
-        main();
-      }, GAME_SPEED)
-    }
-    /**
-     * 设置画布的背景色为 CANVAS_BACKGROUND_COLOUR 
-     * 并绘制画布的边框
-     */
-    function clearCanvas() {
-      //  选择画布的背景颜色
-      ctx.fillStyle = CANVAS_BACKGROUND_COLOUR;
-      //  选择画布的边框颜色
-      ctx.strokestyle = CANVAS_BORDER_COLOUR;
-      // 绘制一个“实心的”长方形来覆盖整个画布
-      ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
-      // 绘制画布的“边框”
-      ctx.strokeRect(0, 0, gameCanvas.width, gameCanvas.height);
-    }
-    /**
-     * 在画布上画食物
-     */
-    function drawFood() {
-      ctx.fillStyle = FOOD_COLOUR;
-      ctx.strokestyle = FOOD_BORDER_COLOUR;
-      ctx.fillRect(foodX, foodY, 10, 10);
-      ctx.strokeRect(foodX, foodY, 10, 10);
-    }
-    /**
-     * 根据蛇的水平移动速度改变蛇的 x 坐标，
-     * 根据蛇的垂直移动速度改变蛇的 y 坐标
-     */
-    function advanceSnake() {
-      // 绘制新的头部
-      const head = {x: snake[0].x + dx, y: snake[0].y + dy};
-      // 将新的头部放到蛇身体的第一个部位
-      snake.unshift(head);
-      const didEatFood = snake[0].x === foodX && snake[0].y === foodY;
-      if (didEatFood) {
-        // 增加分数
-        score += 10;
-        // 在屏幕上显示分数
-        document.getElementById('score').innerHTML = score;
-        // 生成新的食物
-        createFood();
-      } else {
-        // 移除蛇的最后一个部分
-        snake.pop();
-      }
-    }
-    /**
-     * 当蛇撞墙或者蛇头碰到蛇身的时候返回 true
-     */
-    function didGameEnd() {
-      for (let i = 4; i < snake.length; i++) {
-        if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true
-      }
-      const hitLeftWall = snake[0].x < 0;
-      const hitRightWall = snake[0].x > gameCanvas.width - 10;
-      const hitToptWall = snake[0].y < 0;
-      const hitBottomWall = snake[0].y > gameCanvas.height - 10;
-      return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall
-    }
-    /**
-     * 给定一个最大值和最小值，生成一个 10 的倍数的随机数     
-     * @param { number } min —— 随机数的下限
-     * @param { number } max —— 随机数的上限
-     */
-    function randomTen(min, max) {
-      return Math.round((Math.random() * (max-min) + min) / 10) * 10;
-    }
-    /**     
-     * 随机生成食物坐标
-     */
-    function createFood() {
-      // 随机生成食物的 x 坐标
-      foodX = randomTen(0, gameCanvas.width - 10);
-      // 随机生成食物的 y 坐标
-      foodY = randomTen(0, gameCanvas.height - 10);
-      // 如果新生成的食物与蛇当前位置重叠，重新为食物生成一个位置
-      snake.forEach(function isFoodOnSnake(part) {
-        const foodIsoNsnake = part.x == foodX && part.y == foodY;
-        if (foodIsoNsnake) createFood();
-      });
-    }
-    /**
-     * 在画布上画蛇
-     */
-    function drawSnake() {
-      // 循环遍历蛇的每一部分，并将其绘制到画布上
-      snake.forEach(drawSnakePart)
-    }
-    /**
-     * 在画布上画蛇的一个部分
-     * @param { object } snakePart —— 需要绘制的部位的所在坐标
-     */
-    function drawSnakePart(snakePart) {
-      // 设置蛇身体的背景颜色
-      ctx.fillStyle = SNAKE_COLOUR;
-      // 设置蛇身的边框色
-      ctx.strokestyle = SNAKE_BORDER_COLOUR;
-      // 在蛇身坐标所在的位置，绘制“实心”的矩形以表示蛇      
-      ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
-      // 绘制蛇身的边框
-      ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
-    }
-    /**     
-     * 根据按下的键，改变蛇的水平移动速度和垂直移动速度
-     * 为了避免蛇反转，蛇的移动方向不能直接变成相反的方向，
-     * 比如说，当前方向是“向右”，那么下一个方向不能是“向左”
-     * @param { object } event —— 键盘事件
-     */
-    function changeDirection(event) {
-      const LEFT_KEY = 37;
-      const RIGHT_KEY = 39;
-      const UP_KEY = 38;
-      const DOWN_KEY = 40;
-      /**
-       * 避免贪食蛇掉头
-       * 举个例子：
-       * 蛇正在向右移动。玩家按下向下键然后迅速地按下向左键。
-       * 此时蛇不会先向下移动一步，而会马上改变方向
-       */
-      if (changingDirection) return;
-      changingDirection = true;
-
-      const keyPressed = event.keyCode;
-      const goingUp = dy === -10;
-      const goingDown = dy === 10;
-      const goingRight = dx === 10;
-      const goingLeft = dx === -10;
-      if (keyPressed === LEFT_KEY && !goingRight) {
-        dx = -10;
-        dy = 0;
-      }
-
-      if (keyPressed === UP_KEY && !goingDown) {
-        dx = 0;
-        dy = -10;
-      }
-
-      if (keyPressed === RIGHT_KEY && !goingLeft) {
-        dx = 10;
-        dy = 0;
-      }
-
-      if (keyPressed === DOWN_KEY && !goingUp) {
-        dx = 0;
-        dy = 10;
-      }
-    }
-// ]]></script>
-<p></p>
-<br />test5 << <a href='test5.html'>Previous</a> <a href='test7.html'>Next</a> >> test7</div>
+<p><canvas height="400" id="taiwan_flag" width="600"></canvas></p>
+<p>
+<script type="text/python3">
+# 導入 doc
+from browser import document as doc
+import math
+  
+# 準備繪圖畫布
+canvas = doc["taiwan_flag"]
+ctx = canvas.getContext("2d")
+# 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+# ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+# 以下採用 canvas 原始座標繪圖
+flag_w = canvas.width
+flag_h = canvas.height
+circle_x = flag_w/2
+circle_y = flag_h/2
+# 先畫滿地紅
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/3, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為紅色
+ctx.fillStyle = '#ff0000'
+ctx.fill()
+# 再畫青天
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/5, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為藍色
+ctx.fillStyle = '#0000dd'
+ctx.fill()
+# 畫十二道光芒白日
+ctx.beginPath()
+star_radius = flag_w/8
+angle = 0
+for i in range(24):
+    angle += 5*math.pi*2/12
+    toX = circle_x + math.cos(angle)*star_radius
+    toY = circle_y + math.sin(angle)*star_radius
+    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
+    if (i):
+        ctx.lineTo(toX, toY)
+    else:
+        ctx.moveTo(toX, toY)
+ctx.closePath()
+# 將填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+# 白日:藍圈
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為藍色
+ctx.fillStyle = 'rgb(0, 0, 149)'
+ctx.fill()
+# 白日:白心
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+</script>
+</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">&lt;!-- for Brython --&gt;
+&lt;script src="./../static/brython.js"&gt;&lt;/script&gt;
+&lt;script src="./../static/brython_stdlib.js"&gt;&lt;/script&gt;
+&lt;!-- 啟動 brython() --&gt;
+&lt;p&gt;
+&lt;script&gt;// &lt;![CDATA[
+window.onload=function(){
+brython(1);
+}
+// ]]&gt;&lt;/script&gt;
+&lt;/p&gt;
+&lt;!-- 以下利用 Brython 程式執行繪圖 --&gt;
+&lt;p&gt;&lt;canvas height="400" id="taiwan_flag" width="600"&gt;&lt;/canvas&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;script type="text/python3"&gt;// &lt;![CDATA[
+# 導入 doc
+from browser import document as doc
+import math
+  
+# 準備繪圖畫布
+canvas = doc["taiwan_flag"]
+ctx = canvas.getContext("2d")
+# 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+# ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+# 以下採用 canvas 原始座標繪圖
+flag_w = canvas.width
+flag_h = canvas.height
+circle_x = flag_w/2
+circle_y = flag_h/2
+# 先畫滿地紅
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/3, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為紅色
+ctx.fillStyle = '#ff0000'
+ctx.fill()
+# 再畫青天
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/5, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為藍色
+ctx.fillStyle = '#0000dd'
+ctx.fill()
+# 畫十二道光芒白日
+ctx.beginPath()
+star_radius = flag_w/8
+angle = 0
+for i in range(24):
+    angle += 5*math.pi*2/12
+    toX = circle_x + math.cos(angle)*star_radius
+    toY = circle_y + math.sin(angle)*star_radius
+    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
+    if (i):
+        ctx.lineTo(toX, toY)
+    else:
+        ctx.moveTo(toX, toY)
+ctx.closePath()
+# 將填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+# 白日:藍圈
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為藍色
+ctx.fillStyle = 'rgb(0, 0, 149)'
+ctx.fill()
+# 白日:白心
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+// ]]&gt;&lt;/script&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;!-- for Brython --&gt;
+&lt;script src="./../static/brython.js"&gt;&lt;/script&gt;
+&lt;script src="./../static/brython_stdlib.js"&gt;&lt;/script&gt;
+&lt;!-- 啟動 brython() --&gt;
+&lt;p&gt;
+&lt;script&gt;// &lt;![CDATA[
+window.onload=function(){
+brython(1);
+}
+// ]]&gt;&lt;/script&gt;</pre>
+<p><br/><br/></p>
+<!-- for Brython -->
+<script src="./../static/brython.js"></script>
+<script src="./../static/brython_stdlib.js"></script>
+<!-- 啟動 brython() -->
+<p>
+<script>
+window.onload=function(){
+brython(1);
+}
+</script>
+</p><br />國旗-改 << <a href='國旗-改.html'>Previous</a> <a href='貪食蛇.html'>Next</a> >> 貪食蛇</div>
         
     <!-- footer -->
       <div class="container">

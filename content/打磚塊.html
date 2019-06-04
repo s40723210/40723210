@@ -136,7 +136,7 @@ init_mathjax();
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='簡介.html'>簡介</a><ul class='dropdown'><li><a href='vi 與 vim 的指令整理.html'>vi 與 vim 的指令整理</a><li><a href='git基本指令.html'>git基本指令</a><li><a href='python基本語法.html'>python基本語法</a></li></ul><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜程式環境.html'>配置可攜程式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='靜態 CMSimfly.html'>靜態 CMSimfly</a><li><a href='Mobile 網站內容.html'>Mobile 網站內容</a><li><a href='Virtual Host.html'>Virtual Host</a><li class='has-children'><a href='Javascript.html'>Javascript</a><ul class='dropdown'><li><a href='First game.html'>First game</a><li><a href='canvas.html'>canvas</a><li><a href='Spur Gear1.html'>Spur Gear1</a><li><a href='test4.html'>test4</a><li><a href='test5.html'>test5</a><li><a href='test6.html'>test6</a><li><a href='test7.html'>test7</a><li><a href='test8.html'>test8</a></li></ul><li><a href='期中報告.html'>期中報告</a><li><a href='期末報告.html'>期末報告</a></li>
+                     <li class='has-children'><a href='簡介.html'>簡介</a><ul class='dropdown'><li><a href='vi 與 vim 的指令整理.html'>vi 與 vim 的指令整理</a><li><a href='git基本指令.html'>git基本指令</a><li><a href='python基本語法.html'>python基本語法</a></li></ul><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜程式環境.html'>配置可攜程式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='靜態 CMSimfly.html'>靜態 CMSimfly</a><li><a href='Mobile 網站內容.html'>Mobile 網站內容</a><li><a href='Virtual Host.html'>Virtual Host</a><li class='has-children'><a href='Javascript.html'>Javascript</a><ul class='dropdown'><li><a href='First game.html'>First game</a><li><a href='canvas.html'>canvas</a><li><a href='Spur Gear1.html'>Spur Gear1</a><li><a href='Spur Gears.html'>Spur Gears</a><li><a href='國旗-改.html'>國旗-改</a><li><a href='國旗-改2.html'>國旗-改2</a><li><a href='貪食蛇.html'>貪食蛇</a><li><a href='打磚塊.html'>打磚塊</a><li><a href='程式嵌入.html'>程式嵌入</a></li></ul><li><a href='期中報告.html'>期中報告</a><li><a href='期末報告.html'>期末報告</a></li>
                       </ul>
                 </nav>
               </div>
@@ -147,21 +147,22 @@ init_mathjax();
           </div>
           
         </header>
-    <div id="tipue_search_content">test6 << <a href='test6.html'>Previous</a> <a href='test8.html'>Next</a> >> test8<br /><h1>test7</h1>
+    <div id="tipue_search_content">貪食蛇 << <a href='貪食蛇.html'>Previous</a> <a href='程式嵌入.html'>Next</a> >> 程式嵌入<br /><h1>打磚塊</h1>
+<p>參考資料:<a href="https://developer.mozilla.org/en-US/docs/Games">https://developer.mozilla.org/en-US/docs/Games</a></p>
 <!-- for Brython -->
-<script src="./../static/brython.js"></script>
-<script src="./../static/brython_stdlib.js"></script>
+<script src="/get_page/static/brython.js"></script>
+<script src="/get_page/static/brython_stdlib.js"></script>
 <!-- 啟動 brython() -->
 <p>
-<script>// <![CDATA[
+<script>
 window.onload=function(){
 brython(1);
 }
-// ]]></script>
+</script>
 </p>
 <!-- 以下利用 Brython 程式執行繪圖 -->
 <p><canvas height="320" id="myCanvas" width="480"></canvas></p>
-<script type="text/javascript">// <![CDATA[
+<script type="text/javascript">
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var ballRadius = 10;
@@ -314,9 +315,8 @@ function draw() {
 }
 
 var interval = setInterval(draw, 10);
-// ]]></script>
-<p></p>
-<br />test6 << <a href='test6.html'>Previous</a> <a href='test8.html'>Next</a> >> test8</div>
+</script>
+<p></p><br />貪食蛇 << <a href='貪食蛇.html'>Previous</a> <a href='程式嵌入.html'>Next</a> >> 程式嵌入</div>
         
     <!-- footer -->
       <div class="container">
