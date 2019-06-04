@@ -219,7 +219,8 @@
 <p><strong><span>Arithmetic Operators</span></strong></p>
 <p>● 如果要進行下面的運算 a= a+b （用a+b的結果為a重新賦值）<br/>● 在python可以改寫成： a += b<br/>● 所以算術運算符號可以有<br/>        +=     -=     *=     /=     %=     **=     //=</p>
 <p><span><strong>Modules or package （也稱為library）</strong></span></p>
-<p>● ”modules” or “packages”：通常是其他人寫好的函數或指令，打包成一個「工具庫」<br/> 方便分享使用。（非python內建，可能會需要下載安裝）<br/>○     本課程會用到的library: numpy (array), matplotlib (基本繪圖), basemap (地圖),<br/>         netCDF (讀nc檔)<br/>● 使用方式：import module_name<br/>○     在執行工具庫內的指令之前，就要先把modules 引進來（不然python不會認得<br/>        非內建的指令）<br/>○     使用工具庫內的指令：module_name.function (or module_name.constant)<br/>○     可以使用import module_name as xxx (xxx是你自己取的縮寫）<br/>        使用指令的語法就簡化成xxx.function，例如:<br/>             import math as m<br/>             x=m.cos(m.pi)</p><h1>網路連線設定</h1>
+<p>● ”modules” or “packages”：通常是其他人寫好的函數或指令，打包成一個「工具庫」<br/> 方便分享使用。（非python內建，可能會需要下載安裝）<br/>○     本課程會用到的library: numpy (array), matplotlib (基本繪圖), basemap (地圖),<br/>         netCDF (讀nc檔)<br/>● 使用方式：import module_name<br/>○     在執行工具庫內的指令之前，就要先把modules 引進來（不然python不會認得<br/>        非內建的指令）<br/>○     使用工具庫內的指令：module_name.function (or module_name.constant)<br/>○     可以使用import module_name as xxx (xxx是你自己取的縮寫）<br/>        使用指令的語法就簡化成xxx.function，例如:<br/>             import math as m<br/>             x=m.cos(m.pi)</p>
+<h1>網路連線設定</h1>
 <p>了解機械設計系電腦輔助設計室電腦的網路設定, 其中包括 IPv4 網路與 IPv6 網路設定.<br/><br/>正常情況下, 電腦輔助設計室中的 64 台電腦透過 IPv4 協定下的 DHCP 與 NAT 上網, 各電腦以 DHCP client 取得 192.168.1.* 的網路位址, 然後以 NAT 的一組外部 IP 上網, 通常必須設定 Proxy Server 為 http://proxy.kmol.info:3128 後上網會比較順暢, 但若 8 台 Proxy Servers 無法正常運作時, 則取消 Proxy Server 的設定.<br/><br/>瀏覽器代理主機設定<br/><br/>了解如何設定 Google Chrome 與 Firefox 瀏覽器的代理主機設定.<br/><br/>申請 Github 帳號<br/><br/>利用 Gmail 帳號申請 Github 帳號, 申請後利用電子郵箱收信進行確認後, 就可以在 Github 上建立倉儲.</p>
 <hr/>
 <p>我的blogger文章:<a href="https://40723210.blogspot.com/2019/05/github.html">https://40723210.blogspot.com/2019/05/github.html</a></p>
@@ -280,10 +281,14 @@
 <p>我的教學影片:<a href="https://youtu.be/SJHMm3o5uEw">https://youtu.be/SJHMm3o5uEw</a><iframe data-blogger-escaped-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" data-blogger-escaped-allowfullscreen="allowfullscreen" data-blogger-escaped-data-mce-fragment="1" data-mce-fragment="1" frameborder="0" height="390" src="https://www.youtube.com/embed/SJHMm3o5uEw" width="590"></iframe></p>
 </div>
 <p></p>
-<p></p><h1>靜態 CMSimfly</h1>
-<p>利用 CMSimfly (https://github.com/chiamingyen/cmsimfly) 內容, 建立自己的 Github Pages 網站<br/><br/>設法利用 <a href="http://mde.tw/wcm2019/content/%E5%AF%A6%E7%BF%92%E9%A0%85%E7%9B%AE%E4%B8%89.html">HTML5 CSS 與 Javascript</a>, 納入與機械設計相關的靜態網頁內容</p>
-<!-- for site wrap --><hr/>
 <p></p>
+<h1>靜態 CMSimfly</h1>
+<p>利用 CMSimfly (https://github.com/chiamingyen/cmsimfly) 內容, 建立自己的 Github Pages 網站<br/><br/>設法利用 <a href="http://mde.tw/wcm2019/content/%E5%AF%A6%E7%BF%92%E9%A0%85%E7%9B%AE%E4%B8%89.html">HTML5 CSS 與 Javascript</a>, 納入與機械設計相關的靜態網頁內容</p>
+<p><span style="color: #0000ff;"><strong>我的Javascript裡面有許多納入與機械設計相關的靜態網頁內容</strong></span></p>
+<!-- for site wrap --><hr/>
+<p><span>我的blogger文章:<a href="https://40723210.blogspot.com/2019/05/cmsimfly.html">https://40723210.blogspot.com/2019/05/cmsimfly.html</a></span></p>
+<p><strong>操作流程和影片:</strong></p>
+<p><span>1.進入自己的倉儲資料夾</span><br/><span><br/></span><span></span><span>2.輸入python wsgi.py來開啟動態</span><br/><span><br/></span><span></span><span>3.進行改版或更新save</span><br/><span><br/></span><span></span><span>4.完成後按generate_pages來儲存</span><br/><span><br/></span><span></span><span>5.輸入git status &gt; git add . &gt; git commit -m "標題" &gt; git push</span><br/><span><br/></span><span></span><span>6.到自己的倉儲檢查沒問題後即可</span><br/><br/><span>我的教學影片:<a href="https://youtu.be/z8sUoVAqmDo">https://youtu.be/z8sUoVAqmDo</a></span><br/><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="390" src="https://www.youtube.com/embed/z8sUoVAqmDo" width="590"></iframe></p>
 <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
 <script src="/get_page/cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
 <script src="/get_page/cmsimde/static/chimper/js/jquery-ui.js"></script>
@@ -309,11 +314,22 @@
                     });
                     </script>
             -->
-<script src="/get_page/cmsimde/static/chimper/js/main.js"></script><h1>Mobile 網站內容</h1>
-<p><br/><br/>學習如何使用 CMSimfly, 在網站中加入各種內容 (導入 Bootstrap frontend framework)<br/><br/>使用 Flask, bs4 與 lxml 模組<br/><br/>了解 CMSimfly 如何建構, 並且嘗試修改現有功能, 除錯或建立自己的網際內容管理系統<br/><br/></p>
-<p></p>
+<script src="/get_page/cmsimde/static/chimper/js/main.js"></script>
+<h1>Mobile 網站內容</h1>
+<p><br/>學習如何使用 CMSimfly, 在網站中加入各種內容 (導入 Bootstrap frontend framework)<br/><br/>使用 Flask, bs4 與 lxml 模組<br/><br/>了解 CMSimfly 如何建構, 並且嘗試修改現有功能, 除錯或建立自己的網際內容管理系統</p>
+<hr/>
+<p><span>我的blogger文章:<a href="https://40723210.blogspot.com/2019/05/mobile.html">https://40723210.blogspot.com/2019/05/mobile.html</a></span></p>
+<p><strong>操作流程和影片:</strong></p>
+<p><span>1.要使用老師模板的話，先進到老師的Github</span><br/><span><br/></span><span></span><span>2.點選系統開發 &gt; Mobile 網站內容 &gt; 套用模板一</span><br/><span><br/></span><span></span><span>3.進到連結後下載zip &gt; 解壓縮 &gt;改名成chimper</span><br/><span><br/></span><span></span><span>4.進到要改的倉儲 &gt;  將資料夾放入static資料夾內</span><br/><span><br/></span><span></span><span>5.開起一個老師的新模板倉儲 &gt; 以Raw打開cmsimfly.leo</span><br/><span><br/></span><span></span><span>6.複製全部 &gt; 到自己的倉儲cmsimfly.leo &gt; 貼上並儲存</span><br/><span><br/></span><span></span><span>7.以Raw打開老師的flaskapp.py &gt; 一樣步驟貼上並儲存</span><br/><span><br/></span><span></span><span>8.進入動態更改 &gt; 直接按generate_pages儲存即可</span><br/><span><br/></span><span></span><span>我的教學影片:<a href="https://youtu.be/DKVSZYUkotI">https://youtu.be/DKVSZYUkotI</a></span><br/><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="390" src="https://www.youtube.com/embed/DKVSZYUkotI" width="590"></iframe></p>
 <h1>Virtual Host</h1>
 <p>Fossil SCM<br/><br/>如何利用 Fossil SCM, 在 Virtualbox 中的 Ubuntu 18.04-2 (8.5 GB) 建立類似 Github 的系統, 可以放入 CMSimfly 的靜態網頁<br/><br/>Ubuntu 18.04 (https://www.ubuntu.com/about/release-cycle), 配置網路連線, 然後架構 uwsgi 環境下的 CMSimfly 動態網站, 或建立 Fossil SCM 用來伺服管理 CMSimfly 下有版次管理的靜態網頁, 或利用 nginx 伺服無版次管理的 CMSimfly 靜態網頁.</p>
+<hr/>
+<p><span>我的blogger文章:<a href="https://40723210.blogspot.com/2019/05/virtual-host.html">https://40723210.blogspot.com/2019/05/virtual-host.html</a></span></p>
+<p><strong>操作流程和影片:</strong></p>
+<p><span>1.google輸入ubuntu &gt; 點選官網 &gt; 下載</span><span>ubuntu server</span><br/><span><br/></span><span></span><span>2.打開virtualbox &gt; New &gt; 輸入名子 &gt; 4096 MB</span><br/><span><br/></span><span></span><span>3.Cearte &gt; VMDK &gt; Dynamically &gt; 500.00 GB</span><br/><span><br/></span><span></span><span>4.Sttings &gt; Network &gt; bridged Adapter &gt; 進入網路中心</span><br/><br/><span>5.選擇電腦所使用的連接網路 &gt; ok &gt; Start</span><br/><span><br/></span><span></span><span>6.選取剛剛所下載的ubuntu &gt; 開始 &gt; 選取語言</span><br/><br/><span>7.Enter &gt; </span><span>Enter &gt; 輸入proxy :http://140.130.17.3:3128</span><br/><span><br/></span><span></span><span>8.</span><span>Enter</span><span> &gt; </span><span>Enter</span><span> &gt; </span><span>Enter</span><span> &gt; continue &gt; 全部都打一樣的</span><br/><span><br/></span><span></span><span>9.space &gt; </span><span>Enter</span><span> &gt; </span><span>Enter</span><span> &gt; 再輸入帳密 &gt; 即可開始設定</span><br/><br/><span>10.<span> 輸入</span><span>sudo apt install uwsgi 來安裝uwsgi</span></span><br/><span><br/></span><span></span><span>我的教學影片:<a href="https://youtu.be/03R3tUvTyIQ">https://youtu.be/03R3tUvTyIQ</a></span><span><span> </span></span><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="390" src="https://www.youtube.com/embed/03R3tUvTyIQ" width="590"></iframe></p>
+<p><strong>開始設定的流程</strong></p>
+<p>我的blogger文章:<a href="https://40723210.blogspot.com/2019/06/virtual-host-2.html">https://40723210.blogspot.com/2019/06/virtual-host-2.html</a></p>
+<p><span>根據老師的教學步驟:</span><br/><span><br/></span><span></span><span><span>1. 安裝最新版的 Virtualbox</span><br/><span>2. 建立 Ubuntu 18.04 虛擬主機</span><br/><span>3. 以網路卡橋接啟動 Ubuntu 伺服器</span><br/><span>4. 以 sudo apt install nginx 安裝 nginx WWW 伺服器</span><br/><span>5. 以 ifconfig 查 Ubuntu 伺服器的 IP, 測試 nginx 伺服器是否可以連線</span><br/><span>6. 以 Windows 10  下的 Filezilla client, 將編輯好的 nginx 設定檔案送到 Ubuntu</span><br/><span>7. 利用 Ubuntu 指令將設定檔案搬至設定位置後, 以 /etc/init.d/nginx restart 重新啟動 nginx</span><br/><span>8. 在 Ubuntu 中以 sudo apt install uwsgi 安裝 uwsgi</span><br/><span>9. 在 Windows 10 編輯 uwsgi 與 nginx 所需的設定檔案, 完成後以 filezilla 送至 Ubuntu.</span><br/><span>10. 將 CMSimfly 程式碼送到 Ubuntu 伺服器中對應目錄後.</span><br/><span>11. 在 Ubuntu 建立 cmsimfly 服務, 並設定隨機啟動.</span><br/><span>12. 完成後, 在 Windows 10 以瀏覽器連線至 CMSimfly, 確認動態網頁與靜態網頁可以在虛擬主機中正常啟動.</span></span><br/><br/><span><span>老師的blogger:</span></span><span><a href="https://2019wcm.blogspot.com/">https://2019wcm.blogspot.com/</a></span><br/><br/><span>最後我完成的虛擬主機連結:192.168.56.102</span><br/><span>我的操作影片1:</span><span><a href="https://youtu.be/Aj-_ISvdLGI" target="_blank">https://youtu.be/Aj-_ISvdLGI</a></span><br/><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="390" src="https://www.youtube.com/embed/Aj-_ISvdLGI" width="590"></iframe><span></span><span><br/></span><span></span><span>我的操作影片2:</span><span><a href="https://youtu.be/SVL-Hk0yNew" target="_blank">https://youtu.be/SVL-Hk0yNew</a></span><br/><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="390" src="https://www.youtube.com/embed/SVL-Hk0yNew" width="590"></iframe></p>
 <h1>Javascript</h1>
 <p><span>這裡是利用 </span><a href="http://mde.tw/wcm2019/content/%E5%AF%A6%E7%BF%92%E9%A0%85%E7%9B%AE%E4%B8%89.html">HTML5 CSS 與 Javascript</a><span>, 納入與機械設計相關的靜態網頁內容</span></p>
 <h2>test1</h2>
