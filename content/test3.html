@@ -136,7 +136,7 @@ init_mathjax();
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='簡介.html'>簡介</a><ul class='dropdown'><li><a href='vi 與 vim 的指令整理.html'>vi 與 vim 的指令整理</a></li></ul><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜程式環境.html'>配置可攜程式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='靜態 CMSimfly.html'>靜態 CMSimfly</a><li><a href='Mobile 網站內容.html'>Mobile 網站內容</a><li><a href='Virtual Host.html'>Virtual Host</a><li class='has-children'><a href='Javascript.html'>Javascript</a><ul class='dropdown'><li><a href='test1.html'>test1</a><li><a href='test2.html'>test2</a><li><a href='test3.html'>test3</a><li><a href='test4.html'>test4</a><li><a href='test5.html'>test5</a><li><a href='test6.html'>test6</a><li><a href='test7.html'>test7</a><li><a href='test8.html'>test8</a></li></ul><li><a href='期中報告.html'>期中報告</a><li><a href='期末報告.html'>期末報告</a></li>
+                     <li class='has-children'><a href='簡介.html'>簡介</a><ul class='dropdown'><li><a href='vi 與 vim 的指令整理.html'>vi 與 vim 的指令整理</a><li><a href='git基本指令.html'>git基本指令</a><li><a href='python基本語法.html'>python基本語法</a></li></ul><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜程式環境.html'>配置可攜程式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='靜態 CMSimfly.html'>靜態 CMSimfly</a><li><a href='Mobile 網站內容.html'>Mobile 網站內容</a><li><a href='Virtual Host.html'>Virtual Host</a><li class='has-children'><a href='Javascript.html'>Javascript</a><ul class='dropdown'><li><a href='test1.html'>test1</a><li><a href='test2.html'>test2</a><li><a href='test3.html'>test3</a><li><a href='test4.html'>test4</a><li><a href='test5.html'>test5</a><li><a href='test6.html'>test6</a><li><a href='test7.html'>test7</a><li><a href='test8.html'>test8</a></li></ul><li><a href='期中報告.html'>期中報告</a><li><a href='期末報告.html'>期末報告</a></li>
                       </ul>
                 </nav>
               </div>
@@ -153,12 +153,12 @@ init_mathjax();
 <script src="./../static/brython_stdlib.js"></script>
 <p></p>
 <!-- 啟動 Brython -->
-<script>
+<script>// <![CDATA[
 window.onload=function(){
 // 設定 data/py 為共用程式路徑
 brython({debug:1, pythonpath:['./../data/py']});
 }
-</script>
+// ]]></script>
 <p><canvas height="600" id="onegear" width="800"></canvas></p>
 <!-- 以下製作 button-->
 <div height="20" id="onegear_div" width="800"></div>
@@ -317,7 +317,7 @@ doc['button'].bind('click',setgearnumber)
 &lt;/script&gt;</pre>
 <p></p>
 <!-- 以下實際利用  Brython 繪圖-->
-<script type="text/python3">
+<script type="text/python3">// <![CDATA[
 from browser import document as doc
 import math
 # deg 為角度轉為徑度的轉換因子
@@ -452,22 +452,22 @@ def setgearnumber(e):
 #判定 button
 setgearnumber(True)
 doc['button'].bind('click',setgearnumber)
-</script>
+// ]]></script>
 <!-- for Brython -->
 <script src="./../static/brython.js"></script>
 <script src="./../static/brython_stdlib.js"></script>
 <!-- 啟動 brython() -->
 <p>
-<script>
+<script>// <![CDATA[
 window.onload=function(){
 brython(1);
 }
-</script>
+// ]]></script>
 </p>
 <!-- 以下利用 Brython 程式執行繪圖 -->
 <p><canvas height="400" id="taiwan_flag" width="600"></canvas></p>
 <p>
-<script type="text/python3">
+<script type="text/python3">// <![CDATA[
 # 導入 doc
 from browser import document as doc
 import math
@@ -519,7 +519,7 @@ ctx.closePath()
 # 填色設為白色
 ctx.fillStyle = '#fff'
 ctx.fill()
-</script>
+// ]]></script>
 </p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">&lt;!-- for Brython --&gt;
 &lt;script src="./../cmsimde/static/brython.js"&gt;&lt;/script&gt;
@@ -589,7 +589,8 @@ ctx.fillStyle = '#fff'
 ctx.fill()
 &lt;/script&gt;</pre>
 <br/><br/><br/>test4
-<p></p><br />test2 << <a href='test2.html'>Previous</a> <a href='test4.html'>Next</a> >> test4</div>
+<p></p>
+<br />test2 << <a href='test2.html'>Previous</a> <a href='test4.html'>Next</a> >> test4</div>
         
     <!-- footer -->
       <div class="container">

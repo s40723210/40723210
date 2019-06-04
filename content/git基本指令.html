@@ -147,26 +147,40 @@ init_mathjax();
           </div>
           
         </header>
-    <div id="tipue_search_content">python基本語法 << <a href='python基本語法.html'>Previous</a> <a href='配置可攜程式環境.html'>Next</a> >> 配置可攜程式環境<br /><h1>網路連線設定</h1>
-<p>了解機械設計系電腦輔助設計室電腦的網路設定, 其中包括 IPv4 網路與 IPv6 網路設定.<br/><br/>正常情況下, 電腦輔助設計室中的 64 台電腦透過 IPv4 協定下的 DHCP 與 NAT 上網, 各電腦以 DHCP client 取得 192.168.1.* 的網路位址, 然後以 NAT 的一組外部 IP 上網, 通常必須設定 Proxy Server 為 http://proxy.kmol.info:3128 後上網會比較順暢, 但若 8 台 Proxy Servers 無法正常運作時, 則取消 Proxy Server 的設定.<br/><br/>瀏覽器代理主機設定<br/><br/>了解如何設定 Google Chrome 與 Firefox 瀏覽器的代理主機設定.<br/><br/>申請 Github 帳號<br/><br/>利用 Gmail 帳號申請 Github 帳號, 申請後利用電子郵箱收信進行確認後, 就可以在 Github 上建立倉儲.</p>
-<hr/>
-<p>我的blogger文章:<a href="https://40723210.blogspot.com/2019/05/github.html">https://40723210.blogspot.com/2019/05/github.html</a></p>
-<p><strong>操作流程和影片:</strong></p>
-<p>1.進入網頁之後在按右上角符號裡的設定</p>
-<p>2.滾到最下面&gt;按進階&gt;點擊 (開啟proxy設定)</p>
-<p>3.點選LAN設定&gt;打開proxy&gt;輸入140.130.17.32&gt;3128即可</p>
-<p>4.創建github帳戶，帳號是s加上學號，email是用學校給的</p>
-<p>我的教學影片:<a href="https://youtu.be/T6CIPW9ujT0">https://youtu.be/T6CIPW9ujT0<br/><iframe data-blogger-escaped-allowfullscreen="allowfullscreen" data-mce-fragment="1" height="314" src="https://www.youtube.com/embed/T6CIPW9ujT0" width="560"></iframe></a></p>
-<p><strong>IPv6 環境設定 操作過程:</strong></p>
-<p>1.進入控制台開啟網路連線</p>
-<p>2.選擇自己所用的網路 &gt; 右鍵內容</p>
-<p>3.勾選IPV6並取消IPV4，點選進入IPV6</p>
-<p>4.使用DNS輸入 2001:b000:168::1</p>
-<p>5.在網頁的proxy中設定完即可</p>
-<p>我的教學影片:<a href="https://youtu.be/uw8-NoNFpm0">https://youtu.be/uw8-NoNFpm0</a><iframe data-blogger-escaped-allowfullscreen="allowfullscreen" data-mce-fragment="1" height="314" src="https://www.youtube.com/embed/uw8-NoNFpm0" width="560"></iframe></p>
-<p></p>
-<p></p>
-<br />python基本語法 << <a href='python基本語法.html'>Previous</a> <a href='配置可攜程式環境.html'>Next</a> >> 配置可攜程式環境</div>
+    <div id="tipue_search_content">vi 與 vim 的指令整理 << <a href='vi 與 vim 的指令整理.html'>Previous</a> <a href='python基本語法.html'>Next</a> >> python基本語法<br /><h1>git基本指令</h1>
+<ol></ol>
+<p>mkdir name 創建一個文檔夾</p>
+<p>rm file 刪除</p>
+<p>cd name 進入文檔夾</p>
+<p>pwd 查看當前目錄</p>
+<p>git init<span> </span><span>把當前目錄變成</span>git<span>可以管理的倉庫 生成</span><span>.git</span><span>文檔夾</span></p>
+<p>git add name<span> </span><span>把文檔添加到暫存區</span>stage</p>
+<p>git commit -m “ ”<span> </span><span>把暫存區所有文檔提交到</span>git<span>當前分支上（本地倉庫）</span></p>
+<p>git status<span> </span><span>查看當前</span>git<span>倉庫狀態</span></p>
+<p>git diff file<span> </span><span>查看修改的文檔內容</span></p>
+<p>git log<span> </span><span>查看從最近到最遠的提交日誌</span></p>
+<p>git reset --hard<span> </span><span>版本號  回退到某版本（</span><span>HEAD</span><span>指向當前版本）</span></p>
+<pre class="highlight"><span>git push origin HEAD --force 上傳目前(hard)版本</span></pre>
+<p>git reflog  <span>查看命令操作歷史</span></p>
+<p>git checkout -- file    <span>丟棄工作區文檔的修改</span></p>
+<p>git reset HEAD file    <span>丟棄暫存區的文檔</span></p>
+<p>git rm file  <span>刪除工作區文檔後還需刪除</span>git<span>中的文檔</span></p>
+<p>git checkout --file  <span>恢復誤刪的</span>git<span>文檔</span></p>
+<p>關聯一個遠程倉庫   git remote add origin address</p>
+<p>第一次推送代碼到遠程倉庫 git push -u origin master</p>
+<p><span>（</span>-u<span>會把本地倉庫</span><span>master</span><span>分支和遠程倉庫的</span>master<span>分支</span><span>關聯起來）</span></p>
+<p>從遠程倉庫克隆代碼到本地 git clone address</p>
+<p>創建分支 git branch name</p>
+<p>切換分支 git checkout name     </p>
+<p>查看分支 git branch</p>
+<p>創建分支並切換到分支上　　git checkout -b name</p>
+<p>合併指定分支到當前分支上 git merge name</p>
+<p>合併後刪除分支 git branch -d name</p>
+<p><strong>合併時出現衝突要手動解決衝突，再提交，最後合併</strong>。</p>
+<p>將寫到一半的代碼從工作區拿走存起來 git stash</p>
+<p><span>恢復隱藏的代碼到工作區並刪除隱藏位置的代碼</span><span> </span> git stash pop</p>
+<p>強行刪除一個沒有合併過的分支 git branch -D name</p>
+<br />vi 與 vim 的指令整理 << <a href='vi 與 vim 的指令整理.html'>Previous</a> <a href='python基本語法.html'>Next</a> >> python基本語法</div>
         
     <!-- footer -->
       <div class="container">
