@@ -147,177 +147,41 @@ init_mathjax();
           </div>
           
         </header>
-    <div id="tipue_search_content">貪食蛇 << <a href='貪食蛇.html'>Previous</a> <a href='程式嵌入.html'>Next</a> >> 程式嵌入<br /><h1>打磚塊</h1>
-<p>參考資料:<a href="https://developer.mozilla.org/en-US/docs/Games">https://developer.mozilla.org/en-US/docs/Games</a></p>
-<!-- for Brython -->
-<script src="/get_page/static/brython.js"></script>
-<script src="/get_page/static/brython_stdlib.js"></script>
-<!-- 啟動 brython() -->
-<p>
-<script>
-window.onload=function(){
-brython(1);
-}
-</script>
-</p>
-<!-- 以下利用 Brython 程式執行繪圖 -->
-<p><canvas height="320" id="myCanvas" width="480"></canvas></p>
-<script type="text/javascript">
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
-var ballRadius = 10;
-var x = canvas.width/2;
-var y = canvas.height-30;
-var dx = 2;
-var dy = -2;
-var paddleHeight = 10;
-var paddleWidth = 75;
-var paddleX = (canvas.width-paddleWidth)/2;
-var rightPressed = false;
-var leftPressed = false;
-var brickRowCount = 5;
-var brickColumnCount = 3;
-var brickWidth = 75;
-var brickHeight = 20;
-var brickPadding = 10;
-var brickOffsetTop = 30;
-var brickOffsetLeft = 30;
-var score = 0;
-
-
-var bricks = [];
-for(var c=0; c<brickColumnCount; c++) {
-  bricks[c] = [];
-  for(var r=0; r<brickRowCount; r++) {
-    bricks[c][r] = { x: 0, y: 0, status: 1 };
-  }
-}
-
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
-document.addEventListener("mousemove", mouseMoveHandler, false);
-
-function keyDownHandler(e) {
-    if(e.key == "Right" || e.key == "ArrowRight") {
-        rightPressed = true;
-    }
-    else if(e.key == "Left" || e.key == "ArrowLeft") {
-        leftPressed = true;
-    }
-}
-
-function keyUpHandler(e) {
-    if(e.key == "Right" || e.key == "ArrowRight") {
-        rightPressed = false;
-    }
-    else if(e.key == "Left" || e.key == "ArrowLeft") {
-        leftPressed = false;
-    }
-}
-
-function mouseMoveHandler(e) {
-  var relativeX = e.clientX - canvas.offsetLeft;
-  if(relativeX > 0 && relativeX < canvas.width) {
-    paddleX = relativeX - paddleWidth/2;
-  }
-}
-function collisionDetection() {
-  for(var c=0; c<brickColumnCount; c++) {
-    for(var r=0; r<brickRowCount; r++) {
-      var b = bricks[c][r];
-      if(b.status == 1) {
-        if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
-          dy = -dy;
-          b.status = 0;
-          score++;
-          if(score == brickRowCount*brickColumnCount) {
-            alert("YOU WIN, CONGRATS!");
-            document.location.reload();
-            clearInterval(interval); // Needed for Chrome to end game
-          }
-        }
-      }
-    }
-  }
-}
-
-function drawBall() {
-  ctx.beginPath();
-  ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-  ctx.fillStyle = "#0095DD";
-  ctx.fill();
-  ctx.closePath();
-}
-function drawPaddle() {
-  ctx.beginPath();
-  ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-  ctx.fillStyle = "#0095DD";
-  ctx.fill();
-  ctx.closePath();
-}
-function drawBricks() {
-  for(var c=0; c<brickColumnCount; c++) {
-    for(var r=0; r<brickRowCount; r++) {
-      if(bricks[c][r].status == 1) {
-        var brickX = (r*(brickWidth+brickPadding))+brickOffsetLeft;
-        var brickY = (c*(brickHeight+brickPadding))+brickOffsetTop;
-        bricks[c][r].x = brickX;
-        bricks[c][r].y = brickY;
-        ctx.beginPath();
-        ctx.rect(brickX, brickY, brickWidth, brickHeight);
-        ctx.fillStyle = "#0095DD";
-        ctx.fill();
-        ctx.closePath();
-      }
-    }
-  }
-}
-function drawScore() {
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#0095DD";
-  ctx.fillText("Score: "+score, 8, 20);
-}
-
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawBricks();
-  drawBall();
-  drawPaddle();
-  drawScore();
-  collisionDetection();
-
-  if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
-    dx = -dx;
-  }
-  if(y + dy < ballRadius) {
-    dy = -dy;
-  }
-  else if(y + dy > canvas.height-ballRadius) {
-    if(x > paddleX && x < paddleX + paddleWidth) {
-      dy = -dy;
-    }
-    else {
-      alert("GAME OVER");
-      document.location.reload();
-      clearInterval(interval); // Needed for Chrome to end game
-    }
-  }
-
-  if(rightPressed && paddleX < canvas.width-paddleWidth) {
-    paddleX += 7;
-  }
-  else if(leftPressed && paddleX > 0) {
-    paddleX -= 7;
-  }
-
-  x += dx;
-  y += dy;
-}
-
-var interval = setInterval(draw, 10);
-</script>
-<p></p>
-<br />貪食蛇 << <a href='貪食蛇.html'>Previous</a> <a href='程式嵌入.html'>Next</a> >> 程式嵌入</div>
+    <div id="tipue_search_content">程式嵌入 << <a href='程式嵌入.html'>Previous</a> <a href='期中報告.html'>Next</a> >> 期中報告<br /><h1>問題探討與解決</h1>
+<p>網頁無法顯示Brython，Spur Gear 導入錯誤，案F12來開啟Console檢查錯誤。</p>
+<p>問題(一)如下圖</p>
+<p><img caption="false" height="445" src="./../images/chrome_rg3IpZC7Gr.png" width="650"/></p>
+<p>解決方法:</p>
+<p>開啟本倉儲資料夾，打開flaskapp.py，案ctrl+f來找到<span>page_content = request.form['page_content']，有2個地方都在底下加入</span></p>
+<div class="line number1 index0 alt2"><code class="html plain">page_content = page_content.replace('// </code><code class="html color2">&lt;![CDATA[', '')</code></div>
+<div class="line number2 index1 alt1"><code class="html color2">page_content = page_content.replace('// ]]&gt;</code><code class="html plain">', '')<br/><br/></code></div>
+<div class="line number2 index1 alt1"><code class="html plain"></code></div>
+<div class="line number2 index1 alt1"><code class="html plain">save後即可解決問題。</code></div>
+<div class="line number2 index1 alt1"><code class="html plain"></code></div>
+<div class="line number2 index1 alt1"><code class="html plain">====================================================================</code></div>
+<div class="line number2 index1 alt1"><code class="html plain">問題(二)如下圖</code></div>
+<div class="line number2 index1 alt1"><code class="html plain"></code><img caption="false" height="289" src="./../images/chrome_A6plPf3iNf.png" width="650"/></div>
+<div class="line number2 index1 alt1"></div>
+<div class="line number2 index1 alt1">解決方法:</div>
+<div class="line number2 index1 alt1"></div>
+<div class="line number2 index1 alt1">檢查本倉儲資料夾static底下是否有brython.js與<span>brython_stdlib.js，沒有的話就必須加入這2個js檔案，有的話就是導入指令錯誤如:</span></div>
+<div class="line number2 index1 alt1"><span></span></div>
+<div class="line number2 index1 alt1">
+<div class="line number1 index0 alt2"><code class="html comments">&lt;!-- 導入 Brython 標準程式庫 --&gt;</code></div>
+<div class="line number2 index1 alt1"><code class="html plain">&lt;</code><code class="html keyword">script</code> <code class="html color1">src</code><code class="html plain">=</code><code class="html string">"./../cmsimde/static/brython.js"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">script</code><code class="html plain">&gt;</code></div>
+<div class="line number3 index2 alt2"><code class="html plain">&lt;</code><code class="html keyword">script</code> <code class="html color1">src</code><code class="html plain">=</code><code class="html string">"./../cmsimde/static/brython_stdlib.js"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">script</code><code class="html plain">&gt;</code></div>
+<div class="line number3 index2 alt2"><code class="html plain"></code></div>
+<div class="line number3 index2 alt2"><code class="html plain">必須改為:</code></div>
+<div class="line number3 index2 alt2"><code class="html plain"></code></div>
+<div class="line number3 index2 alt2">
+<div class="line number1 index0 alt2"><code class="html comments">&lt;!-- 導入 Brython 標準程式庫 --&gt;</code></div>
+<div class="line number2 index1 alt1"><code class="html plain">&lt;</code><code class="html keyword">script</code><span> </span><code class="html color1">src</code><code class="html plain">=</code><code class="html string">"/static/brython.js"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">script</code><code class="html plain">&gt;</code></div>
+<div class="line number3 index2 alt2"><code class="html plain">&lt;</code><code class="html keyword">script</code><span> </span><code class="html color1">src</code><code class="html plain">=</code><code class="html string">"/static/brython_stdlib.js"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">script</code><code class="html plain">&gt;</code></div>
+</div>
+<div class="line number3 index2 alt2"><code class="html plain"></code></div>
+<div class="line number3 index2 alt2"><code class="html plain">即可解決顯示問題。</code></div>
+</div>
+<div class="line number2 index1 alt1"><span></span></div><br />程式嵌入 << <a href='程式嵌入.html'>Previous</a> <a href='期中報告.html'>Next</a> >> 期中報告</div>
         
     <!-- footer -->
       <div class="container">

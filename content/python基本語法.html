@@ -136,7 +136,7 @@ init_mathjax();
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='簡介.html'>簡介</a><ul class='dropdown'><li><a href='vi 與 vim 的指令整理.html'>vi 與 vim 的指令整理</a><li><a href='git基本指令.html'>git基本指令</a><li><a href='python基本語法.html'>python基本語法</a></li></ul><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜程式環境.html'>配置可攜程式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='靜態 CMSimfly.html'>靜態 CMSimfly</a><li><a href='Mobile 網站內容.html'>Mobile 網站內容</a><li><a href='Virtual Host.html'>Virtual Host</a><li class='has-children'><a href='Javascript.html'>Javascript</a><ul class='dropdown'><li><a href='First game.html'>First game</a><li><a href='canvas.html'>canvas</a><li><a href='Spur Gear1.html'>Spur Gear1</a><li><a href='Spur Gears.html'>Spur Gears</a><li><a href='國旗-改.html'>國旗-改</a><li><a href='國旗-改2.html'>國旗-改2</a><li><a href='貪食蛇.html'>貪食蛇</a><li><a href='打磚塊.html'>打磚塊</a><li><a href='程式嵌入.html'>程式嵌入</a></li></ul><li><a href='期中報告.html'>期中報告</a><li><a href='期末報告.html'>期末報告</a></li>
+                     <li class='has-children'><a href='簡介.html'>簡介</a><ul class='dropdown'><li><a href='vi 與 vim 的指令整理.html'>vi 與 vim 的指令整理</a><li><a href='git基本指令.html'>git基本指令</a><li><a href='python基本語法.html'>python基本語法</a><li><a href='Dos 基本指令.html'>Dos 基本指令</a></li></ul><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜程式環境.html'>配置可攜程式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='靜態 CMSimfly.html'>靜態 CMSimfly</a><li><a href='Mobile 網站內容.html'>Mobile 網站內容</a><li><a href='Virtual Host.html'>Virtual Host</a><li class='has-children'><a href='Javascript.html'>Javascript</a><ul class='dropdown'><li><a href='First game.html'>First game</a><li><a href='canvas.html'>canvas</a><li><a href='Spur Gear1.html'>Spur Gear1</a><li><a href='Spur Gears.html'>Spur Gears</a><li><a href='國旗-改.html'>國旗-改</a><li><a href='國旗-改2.html'>國旗-改2</a><li><a href='貪食蛇.html'>貪食蛇</a><li><a href='打磚塊.html'>打磚塊</a><li><a href='程式嵌入.html'>程式嵌入</a></li></ul><li><a href='問題探討與解決.html'>問題探討與解決</a><li><a href='期中報告.html'>期中報告</a><li><a href='期末報告.html'>期末報告</a></li>
                       </ul>
                 </nav>
               </div>
@@ -147,7 +147,7 @@ init_mathjax();
           </div>
           
         </header>
-    <div id="tipue_search_content">git基本指令 << <a href='git基本指令.html'>Previous</a> <a href='網路連線設定.html'>Next</a> >> 網路連線設定<br /><h1>python基本語法</h1>
+    <div id="tipue_search_content">git基本指令 << <a href='git基本指令.html'>Previous</a> <a href='Dos 基本指令.html'>Next</a> >> Dos 基本指令<br /><h1>python基本語法</h1>
 <p>● ”#”符號後是註解（comment），可以在一列的開頭或中間加入<br/>● reserved word or built-in function (變數取名請避開！)<br/>○     and, exec, not, as, finally, or, assert, for, pass, except<br/>○     break, from, print, class, global, raise, continue, if, return<br/>○     def, import, try, del, in, while, elif, is, with, else, lambda, yield<br/>● 縮排視為不同的block (在IF判斷式或迴圈的段落中使用)<br/>○     縮排可以用tab或是數個空格(至少一個空格)。<br/>○     空格的數量不同，視為不同的block (bug很容易因為這一點而發生)<br/>● python的每個變數視為一個object。</p>
 <p><span><strong>Python variables</strong></span></p>
 <p>● 不需要事先宣告變數，直接用”=“ assign value（賦值）即可。<br/>○     x=3.14 → 實數變數<br/>● 變數類型（data type）根據被賦予的值決定（之後如果被assign不同類型的數<br/>值，該變數的類型就會直接改變）<br/>○     x=‘text’ → 字串變數<br/>● 確認變數的data type: type(x)<br/>● 變數名稱中的大小寫要完全一致（a、A會當作不同的變數）<br/>● python可以在同一個指令中對多個變數賦值<br/>○     x, y = 2, 1 → x = 2, y = 1<br/>● 若想要移除變數，使用del x y<br/>● 常見的data type: number, string, list, tuple, boolean</p>
@@ -165,7 +165,7 @@ init_mathjax();
 <p>● 如果要進行下面的運算 a= a+b （用a+b的結果為a重新賦值）<br/>● 在python可以改寫成： a += b<br/>● 所以算術運算符號可以有<br/>        +=     -=     *=     /=     %=     **=     //=</p>
 <p><span><strong>Modules or package （也稱為library）</strong></span></p>
 <p>● ”modules” or “packages”：通常是其他人寫好的函數或指令，打包成一個「工具庫」<br/> 方便分享使用。（非python內建，可能會需要下載安裝）<br/>○     本課程會用到的library: numpy (array), matplotlib (基本繪圖), basemap (地圖),<br/>         netCDF (讀nc檔)<br/>● 使用方式：import module_name<br/>○     在執行工具庫內的指令之前，就要先把modules 引進來（不然python不會認得<br/>        非內建的指令）<br/>○     使用工具庫內的指令：module_name.function (or module_name.constant)<br/>○     可以使用import module_name as xxx (xxx是你自己取的縮寫）<br/>        使用指令的語法就簡化成xxx.function，例如:<br/>             import math as m<br/>             x=m.cos(m.pi)</p>
-<br />git基本指令 << <a href='git基本指令.html'>Previous</a> <a href='網路連線設定.html'>Next</a> >> 網路連線設定</div>
+<br />git基本指令 << <a href='git基本指令.html'>Previous</a> <a href='Dos 基本指令.html'>Next</a> >> Dos 基本指令</div>
         
     <!-- footer -->
       <div class="container">
